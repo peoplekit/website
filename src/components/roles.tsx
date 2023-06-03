@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from 'react';
-import { Box, Button, Card, CardMedia, Fade, Grid, Slide, Stack, Tab, Tabs, Typography } from '@mui/material';
+import { Card, CardMedia, Fade, Grid, Stack, Tab, Tabs, Typography } from '@mui/material';
 
 function a11yProps(index: number) {
   return {
@@ -45,7 +45,7 @@ export const Roles: FC = () => {
           },
           '& .Mui-selected': {
             backgroundColor: theme.palette.primary.light,
-            color: 'white'
+            color: 'white !important'
           }
         })}
       >
