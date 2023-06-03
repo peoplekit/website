@@ -10,7 +10,9 @@ export const Header: FC = () => {
         <Typography variant="h6">PeopleKit™</Typography>
         <Box sx={{ flexGrow: 1 }} />
         <Stack spacing={2} direction="row">
-          <Button variant="outlined">View Demo</Button>
+          <Button color="secondary" variant="outlined">
+            View Demo
+          </Button>
           <Button variant="contained">Contact Us</Button>
         </Stack>
       </Toolbar>
