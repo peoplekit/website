@@ -56,8 +56,8 @@ export const Roles: FC = () => {
         <Tab label="Managers" {...a11yProps(4)} />
         <Tab label="Employees" {...a11yProps(5)} />
       </Tabs>
-      <Fade in={tab === 0} timeout={1000} sx={{ display: tab === 0 ? 'inherit' : 'none' }}>
-        <Grid container spacing={5}>
+      <Fade in={tab === 0} timeout={1000}>
+        <Grid container spacing={5} sx={{ display: tab === 0 ? 'inherit' : 'none' }}>
           <Grid item xs={12} md={6} lg={4} sx={{ display: 'flex', alignItems: 'center' }}>
             <Card
               sx={(theme) => ({
@@ -81,8 +81,8 @@ export const Roles: FC = () => {
           </Grid>
         </Grid>
       </Fade>
-      <Fade in={tab === 1} timeout={1000} sx={{ display: tab === 1 ? 'inherit' : 'none' }}>
-        <Grid container spacing={5}>
+      <Fade in={tab === 1} timeout={1000}>
+        <Grid container spacing={5} sx={{ display: tab === 1 ? 'inherit' : 'none' }}>
           <Grid item xs={12} md={6} lg={4} sx={{ display: 'flex', alignItems: 'center' }}>
             <Card
               sx={(theme) => ({
@@ -106,8 +106,8 @@ export const Roles: FC = () => {
           </Grid>
         </Grid>
       </Fade>
-      <Fade in={tab === 2} timeout={1000} sx={{ display: tab === 2 ? 'inherit' : 'none' }}>
-        <Grid container spacing={5}>
+      <Fade in={tab === 2} timeout={1000}>
+        <Grid container spacing={5} sx={{ display: tab === 2 ? 'inherit' : 'none' }}>
           <Grid item xs={12} md={6} lg={4} sx={{ display: 'flex', alignItems: 'center' }}>
             <Card
               sx={(theme) => ({
@@ -131,8 +131,8 @@ export const Roles: FC = () => {
           </Grid>
         </Grid>
       </Fade>
-      <Fade in={tab === 3} timeout={1000} sx={{ display: tab === 3 ? 'inherit' : 'none' }}>
-        <Grid container spacing={5}>
+      <Fade in={tab === 3} timeout={1000}>
+        <Grid container spacing={5} sx={{ display: tab === 3 ? 'inherit' : 'none' }}>
           <Grid item xs={12} md={6} lg={4} sx={{ display: 'flex', alignItems: 'center' }}>
             <Card
               sx={(theme) => ({
@@ -156,8 +156,8 @@ export const Roles: FC = () => {
           </Grid>
         </Grid>
       </Fade>
-      <Fade in={tab === 4} timeout={1000} sx={{ display: tab === 4 ? 'inherit' : 'none' }}>
-        <Grid container spacing={5}>
+      <Fade in={tab === 4} timeout={1000}>
+        <Grid container spacing={5} sx={{ display: tab === 4 ? 'inherit' : 'none' }}>
           <Grid item xs={12} md={6} lg={4} sx={{ display: 'flex', alignItems: 'center' }}>
             <Card
               sx={(theme) => ({
@@ -181,8 +181,8 @@ export const Roles: FC = () => {
           </Grid>
         </Grid>
       </Fade>
-      <Fade in={tab === 5} timeout={1000} sx={{ display: tab === 5 ? 'inherit' : 'none' }}>
-        <Grid container spacing={5}>
+      <Fade in={tab === 5} timeout={1000}>
+        <Grid container spacing={5} sx={{ display: tab === 5 ? 'inherit' : 'none' }}>
           <Grid item xs={12} md={6} lg={4} sx={{ display: 'flex', alignItems: 'center' }}>
             <Card
               sx={(theme) => ({

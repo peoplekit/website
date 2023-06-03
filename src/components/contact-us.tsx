@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import { Button, Stack, TextField, Typography } from '@mui/material';
-import { TextInput } from '@components/text-input';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 
@@ -10,7 +9,7 @@ export const ContactUs: FC = () => {
       <Typography variant="h4" component="h2">
         Contact Us
       </Typography>
-      <form autocomplete="on" action="https://api.web3forms.com/submit" method="POST">
+      <form action="https://api.web3forms.com/submit" method="POST">
         <div className="h-captcha" data-captcha="true"></div>
         <input type="hidden" name="access_key" value="a960d821-50d8-42e7-9e69-5efe06be3be7" />
         <input type="hidden" name="from_name" value="PeopleKit - Contact Us" />

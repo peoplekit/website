@@ -1,12 +1,12 @@
 import { FC } from 'react';
-import { AppBar, Avatar, Box, Button, Stack, Toolbar, Typography, useTheme } from '@mui/material';
+import { AppBar, Box, Button, Stack, Toolbar, Typography, useTheme } from '@mui/material';
 
 export const Header: FC = () => {
   const theme = useTheme();
   return (
     <AppBar sx={{ backgroundColor: theme.palette.background.paper, color: 'black', boxShadow: 'none' }}>
-      <Toolbar elevation={0}>
-        <Avatar sx={{ p: 0.1, mr: 1, backgroundColor: theme.palette.primary }} src="/logo.png" />
+      <Toolbar>
+        <Box component="img" src="/logo.png" sx={{ height: '40px', mr: 2 }} />
         <Typography variant="h6">PeopleKit™</Typography>
         <Box sx={{ flexGrow: 1 }} />
         <Stack spacing={2} direction="row">
