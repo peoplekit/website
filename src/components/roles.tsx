@@ -20,8 +20,6 @@ export const Roles: FC = () => {
     return () => clearInterval(interval);
   }, []);
 
-  console.log(tab);
-
   return (
     <Stack spacing={3} sx={{ textAlign: 'center', alignItems: 'center' }}>
       <Typography variant="h4" component="h2">
