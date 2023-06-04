@@ -3,7 +3,6 @@ import { Main } from '@components/main';
 import { Roles } from '@components/roles';
 import { Stack } from '@mui/material';
 import { Section } from '@components/section';
-import { Features } from '@components/features';
 import { ContactUs } from '@components/contact-us';
 import { ScrollToHashElement } from '@components/scroll-to-hash-element';
 

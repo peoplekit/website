@@ -6,7 +6,7 @@ export const ScrollToHashElement: FC = () => {
 
   let hashElement = useMemo(() => {
     let hash = location.hash;
-    const removeHashCharacter = (str) => {
+    const removeHashCharacter = (str: string) => {
       return str.slice(1);
     };
 

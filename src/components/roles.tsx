@@ -1,12 +1,5 @@
 import { FC, useEffect, useState } from 'react';
-import { Card, CardMedia, Chip, Fade, Grid, Stack, Tab, Tabs, Typography } from '@mui/material';
-
-function a11yProps(index: number) {
-  return {
-    id: `tabs-${index}`,
-    'aria-controls': `tabpanel-${index}`
-  };
-}
+import { Card, CardMedia, Chip, Fade, Grid, Stack, Typography } from '@mui/material';
 
 export const Roles: FC = () => {
   const [tab, setTab] = useState(0);
