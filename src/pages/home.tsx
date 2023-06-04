@@ -17,9 +17,6 @@ export const Home: FC = () => {
       <Section>
         <Roles />
       </Section>
-      <Section>
-        <Features />
-      </Section>
       <Section id="contact-us">
         <ContactUs />
       </Section>
