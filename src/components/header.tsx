@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { AppBar, Box, Button, Stack, Toolbar, Typography, useTheme } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 export const Header: FC = () => {
   const theme = useTheme();
@@ -10,10 +11,12 @@ export const Header: FC = () => {
         <Typography variant="h6">PeopleKit™</Typography>
         <Box sx={{ flexGrow: 1 }} />
         <Stack spacing={2} direction="row">
-          <Button color="secondary" variant="outlined">
+          <Button component="a" color="secondary" variant="outlined" href="https://demo.peoplekit.com" target="_blank">
             View Demo
           </Button>
-          <Button variant="contained">Contact Us</Button>
+          <Link to="#contact-us">
+            <Button variant="contained">Contact Us</Button>
+          </Link>
         </Stack>
       </Toolbar>
     </AppBar>

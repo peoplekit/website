@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { Box, Button, Card, CardMedia, Grid, Stack, Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 export const Main: FC = () => {
   return (
@@ -14,10 +15,12 @@ export const Main: FC = () => {
             insights into your workforce.
           </Typography>
           <Stack spacing={2} direction="row">
-            <Button color="secondary" variant="outlined">
+            <Button component="a" color="secondary" variant="outlined" href="https://demo.peoplekit.com" target="_blank">
               View Demo
             </Button>
-            <Button variant="contained">Contact Us</Button>
+            <Link to="#contact-us">
+              <Button variant="contained">Contact Us</Button>
+            </Link>
           </Stack>
         </Stack>
       </Grid>
