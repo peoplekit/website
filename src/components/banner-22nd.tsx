@@ -4,7 +4,7 @@ import { SectionContent } from '@components/section.content.tsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRocket } from '@fortawesome/free-solid-svg-icons';
 
-export const Banner: FC = () => {
+export const Banner22nd: FC = () => {
   return (
     <SectionContent>
       <Stack textAlign="center" sx={{ py: 4 }} gap={3}>
