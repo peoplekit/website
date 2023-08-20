@@ -7,6 +7,7 @@ import { ScrollToHashElement } from '@components/scroll-to-hash-element';
 import { useTheme } from '@mui/material';
 import { Banner22nd } from '@components/banner-22nd.tsx';
 import { BannerExcellence } from '@components/banner-excellence.tsx';
+import { Modules } from '@components/modules.tsx';
 
 export const Home: FC = () => {
   const { palette } = useTheme();
@@ -21,6 +22,9 @@ export const Home: FC = () => {
       </Section>
       <Section height="40vh" alignItems="center" backgroundColor={palette.primary.light}>
         <Banner22nd />
+      </Section>
+      <Section height="100vh">
+        <Modules />
       </Section>
       <Section height="50vh" alignItems="center" backgroundColor={palette.primary.dark}>
         <BannerExcellence />

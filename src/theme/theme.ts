@@ -42,6 +42,7 @@ export const theme = createTheme({
       fontFamily: 'Poppins'
     },
     subtitle1: {
+      fontWeight: 500,
       fontSize: '24px'
     }
   },
