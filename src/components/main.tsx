@@ -9,10 +9,7 @@ export const Main: FC = () => {
   return (
     <>
       <ParallaxBanner style={{ aspectRatio: '2 / 1', zIndex: -100, width: '100%', position: 'absolute', top: 0, left: 0, height: '100%' }}>
-        <ParallaxBannerLayer
-          image="/background.webp"
-          speed={-20}
-        />
+        <ParallaxBannerLayer image="/background.webp" speed={-20} />
       </ParallaxBanner>
       <SectionContent>
         <Grid container spacing={3}>
