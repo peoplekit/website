@@ -8,10 +8,12 @@ export const Header: FC = () => {
     <AppBar sx={{ backgroundColor: theme.palette.background.paper, color: 'black', boxShadow: 'none' }}>
       <Toolbar>
         <Box component="img" src="/logo.png" sx={{ height: '40px', mr: 2 }} />
-        <Typography variant="h6">PeopleKit™</Typography>
+        <Typography variant="h6" component="span">
+          PeopleKit™
+        </Typography>
         <Box sx={{ flexGrow: 1 }} />
         <Stack spacing={2} direction="row">
-          <Button component="a" color="secondary" variant="outlined" href="https://demo.peoplekit.com" target="_blank">
+          <Button component="a" color="secondary" variant="contained" href="https://demo.peoplekit.com" target="_blank">
             View Demo
           </Button>
           <Link to="#contact-us">

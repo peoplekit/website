@@ -19,6 +19,8 @@ export const theme = createTheme({
       textTransform: 'none'
     },
     h1: {
+      fontWeight: 700,
+      fontSize: '90px',
       fontFamily: 'Poppins'
     },
     h2: {
@@ -34,19 +36,26 @@ export const theme = createTheme({
       fontFamily: 'Poppins'
     },
     h6: {
+      fontWeight: 600,
       fontFamily: 'Poppins'
+    },
+    subtitle1: {
+      fontSize: '24px'
     }
   },
   palette: {
     primary: {
-      light: '#9d46ff',
-      main: '#6200EA',
+      light: '#971EEF33',
+      main: '#971EEF',
       dark: '#3B008F'
     },
     secondary: {
       light: '#F3ADFF',
       main: '#d500f9',
       dark: '#68007A'
+    },
+    text: {
+      primary: '#16163D'
     }
   }
 });

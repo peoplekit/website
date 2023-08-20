@@ -8,7 +8,7 @@ export type SectionProps = {
 
 export const Section: FC<SectionProps> = ({ id, children }) => {
   return (
-    <Box id={id} component="section" sx={{ minHeight: '60vh', display: 'flex', alignItems: 'center' }}>
+    <Box id={id} component="section" sx={{ minHeight: '100vh', display: 'flex', alignItems: 'center' }}>
       {children}
     </Box>
   );
