@@ -76,138 +76,126 @@ export const Roles: FC = () => {
             }}
           />
         </Stack>
-        {tab === 0 && (
-          <Fade in={tab === 0} timeout={1000}>
-            <Grid container spacing={5} sx={{ display: tab === 0 ? 'inherit' : 'none' }}>
-              <Grid item xs={0} md={1} />
-              <Grid item xs={12} md={4} sx={{ display: 'flex', alignItems: 'center' }}>
-                <Card>
-                  <CardMedia component="img" image="/roles/Executive.png" />
-                </Card>
-              </Grid>
-              <Grid item xs={0} md={1} />
-              <Grid item xs={12} md={5} sx={{ display: 'flex', textAlign: 'start' }}>
-                <Stack spacing={3}>
-                  <Typography variant="subtitle1">Get real-time analytics, real-fast</Typography>
-                  <Typography>
-                    Using PeopleKit™'s powerful data & analytics platform and state-of-the-art machine-learning models & AI chatbot your time to insights will be quicker than ever
-                    before. Lead your organization like never before through unprecedented insights at your fingertips.
-                  </Typography>
-                </Stack>
-              </Grid>
+        <Fade in={tab === 0} timeout={1000}>
+          <Grid container spacing={5} sx={{ display: tab === 0 ? 'inherit' : 'none' }}>
+            <Grid item xs={0} md={1} />
+            <Grid item xs={12} md={4} sx={{ display: 'flex', alignItems: 'center' }}>
+              <Card>
+                <CardMedia component="img" image="/roles/Executive.png" />
+              </Card>
             </Grid>
-          </Fade>
-        )}
-        {tab === 1 && (
-          <Fade in={tab === 1} timeout={1000}>
-            <Grid container spacing={5}>
-              <Grid item xs={0} md={1} />
-              <Grid item xs={12} md={4} sx={{ display: 'flex', alignItems: 'center' }}>
-                <Card>
-                  <CardMedia component="img" image="/roles/HR VP.png" />
-                </Card>
-              </Grid>
-              <Grid item xs={0} md={1} />
-              <Grid item xs={12} md={5} sx={{ display: 'flex', textAlign: 'start' }}>
-                <Stack spacing={3}>
-                  <Typography variant="subtitle1">Become an even better partner</Typography>
-                  <Typography>
-                    Be an expert in the organizations you support and guide them with proactive and actionable recommendations derived from their data. PeopleKit's fully
-                    self-service onboarding protocols means HR COE's insights don't rely on a vendor's schedule - onboard in a matter of hours, not weeks.
-                  </Typography>
-                </Stack>
-              </Grid>
+            <Grid item xs={0} md={1} />
+            <Grid item xs={12} md={5} sx={{ display: 'flex', textAlign: 'start' }}>
+              <Stack spacing={3}>
+                <Typography variant="subtitle1">Get real-time analytics, real-fast</Typography>
+                <Typography>
+                  Using PeopleKit™'s powerful data & analytics platform and state-of-the-art machine-learning models & AI chatbot your time to insights will be quicker than ever
+                  before. Lead your organization like never before through unprecedented insights at your fingertips.
+                </Typography>
+              </Stack>
             </Grid>
-          </Fade>
-        )}
-        {tab === 2 && (
-          <Fade in={tab === 2} timeout={1000}>
-            <Grid container spacing={5}>
-              <Grid item xs={0} md={1} />
-              <Grid item xs={12} md={4} sx={{ display: 'flex', alignItems: 'center' }}>
-                <Card>
-                  <CardMedia component="img" image="/roles/Finance.png" />
-                </Card>
-              </Grid>
-              <Grid item xs={0} md={1} />
-              <Grid item xs={12} md={5} sx={{ display: 'flex', textAlign: 'start' }}>
-                <Stack spacing={3}>
-                  <Typography variant="subtitle1">Stick to your financial plan by keeping a pulse on workforce costs</Typography>
-                  <Typography>
-                    Advance insight in approval flows, hiring & turnover, worker compensation, and aggregate workforce costs - in addition to forecasting and what-if capabilities -
-                    you'll get the full picture on one of your companies largest expenses.
-                  </Typography>
-                </Stack>
-              </Grid>
+          </Grid>
+        </Fade>
+        <Fade in={tab === 1} timeout={1000}>
+          <Grid container spacing={5} sx={{ display: tab === 1 ? 'inherit' : 'none' }}>
+            <Grid item xs={0} md={1} />
+            <Grid item xs={12} md={4} sx={{ display: 'flex', alignItems: 'center' }}>
+              <Card>
+                <CardMedia component="img" image="/roles/HR VP.png" />
+              </Card>
             </Grid>
-          </Fade>
-        )}
-        {tab === 3 && (
-          <Fade in={tab === 3} timeout={1000}>
-            <Grid container spacing={5}>
-              <Grid item xs={0} md={1} />
-              <Grid item xs={12} md={4} sx={{ display: 'flex', alignItems: 'center' }}>
-                <Card>
-                  <CardMedia component="img" image="/roles/Business Leader.png" />
-                </Card>
-              </Grid>
-              <Grid item xs={0} md={1} />
-              <Grid item xs={12} md={5} sx={{ display: 'flex', textAlign: 'start' }}>
-                <Stack spacing={3}>
-                  <Typography variant="subtitle1">Unlock one of your biggest investments: your people</Typography>
-                  <Typography>
-                    Your people leaders and individual contributors drive your business forward - see how they can be supported and pair their people data with business data for
-                    optimizing everything from sales through incentives to production lines through absorption rates - all tailored to suite your business' needs.{' '}
-                  </Typography>
-                </Stack>
-              </Grid>
+            <Grid item xs={0} md={1} />
+            <Grid item xs={12} md={5} sx={{ display: 'flex', textAlign: 'start' }}>
+              <Stack spacing={3}>
+                <Typography variant="subtitle1">Become an even better partner</Typography>
+                <Typography>
+                  Be an expert in the organizations you support and guide them with proactive and actionable recommendations derived from their data. PeopleKit's fully self-service
+                  onboarding protocols means HR COE's insights don't rely on a vendor's schedule - onboard in a matter of hours, not weeks.
+                </Typography>
+              </Stack>
             </Grid>
-          </Fade>
-        )}
-        {tab === 4 && (
-          <Fade in={tab === 4} timeout={1000}>
-            <Grid container spacing={5}>
-              <Grid item xs={0} md={1} />
-              <Grid item xs={12} md={4} sx={{ display: 'flex', alignItems: 'center' }}>
-                <Card>
-                  <CardMedia component="img" image="/roles/Manager.png" />
-                </Card>
-              </Grid>
-              <Grid item xs={0} md={1} />
-              <Grid item xs={12} md={5} sx={{ display: 'flex', textAlign: 'start' }}>
-                <Stack spacing={3}>
-                  <Typography variant="subtitle1">Drive performance through actionable insight </Typography>
-                  <Typography>
-                    PeopleKit enables better management through data. Connect dots across data sources about your teams including performance, recruiting, active & passive
-                    listening, productivity tools, compensation, benchmarking, sales data and more.
-                  </Typography>
-                </Stack>
-              </Grid>
+          </Grid>
+        </Fade>
+        <Fade in={tab === 2} timeout={1000}>
+          <Grid container spacing={5} sx={{ display: tab === 2 ? 'inherit' : 'none' }}>
+            <Grid item xs={0} md={1} />
+            <Grid item xs={12} md={4} sx={{ display: 'flex', alignItems: 'center' }}>
+              <Card>
+                <CardMedia component="img" image="/roles/Finance.png" />
+              </Card>
             </Grid>
-          </Fade>
-        )}
-        {tab === 5 && (
-          <Fade in={tab === 5} timeout={1000}>
-            <Grid container spacing={5}>
-              <Grid item xs={0} md={1} />
-              <Grid item xs={12} md={4} sx={{ display: 'flex', alignItems: 'center' }}>
-                <Card>
-                  <CardMedia component="img" image="/roles/Employee.png" />
-                </Card>
-              </Grid>
-              <Grid item xs={0} md={1} />
-              <Grid item xs={12} md={5} sx={{ display: 'flex', textAlign: 'start' }}>
-                <Stack spacing={3}>
-                  <Typography variant="subtitle1">See your data; own your data</Typography>
-                  <Typography>
-                    Empower your workforce by enabling them to see the data you have about them, as your organization needs. Enabling workers to view their personal information
-                    about performance feedback, office attendance, and more has been shown to better equip them to meet or exceed expectations on the job.
-                  </Typography>
-                </Stack>
-              </Grid>
+            <Grid item xs={0} md={1} />
+            <Grid item xs={12} md={5} sx={{ display: 'flex', textAlign: 'start' }}>
+              <Stack spacing={3}>
+                <Typography variant="subtitle1">Stick to your financial plan by keeping a pulse on workforce costs</Typography>
+                <Typography>
+                  Advance insight in approval flows, hiring & turnover, worker compensation, and aggregate workforce costs - in addition to forecasting and what-if capabilities -
+                  you'll get the full picture on one of your companies largest expenses.
+                </Typography>
+              </Stack>
             </Grid>
-          </Fade>
-        )}
+          </Grid>
+        </Fade>
+        <Fade in={tab === 3} timeout={1000}>
+          <Grid container spacing={5} sx={{ display: tab === 3 ? 'inherit' : 'none' }}>
+            <Grid item xs={0} md={1} />
+            <Grid item xs={12} md={4} sx={{ display: 'flex', alignItems: 'center' }}>
+              <Card>
+                <CardMedia component="img" image="/roles/Business Leader.png" />
+              </Card>
+            </Grid>
+            <Grid item xs={0} md={1} />
+            <Grid item xs={12} md={5} sx={{ display: 'flex', textAlign: 'start' }}>
+              <Stack spacing={3}>
+                <Typography variant="subtitle1">Unlock one of your biggest investments: your people</Typography>
+                <Typography>
+                  Your people leaders and individual contributors drive your business forward - see how they can be supported and pair their people data with business data for
+                  optimizing everything from sales through incentives to production lines through absorption rates - all tailored to suite your business' needs.{' '}
+                </Typography>
+              </Stack>
+            </Grid>
+          </Grid>
+        </Fade>
+        <Fade in={tab === 4} timeout={1000}>
+          <Grid container spacing={5} sx={{ display: tab === 4 ? 'inherit' : 'none' }}>
+            <Grid item xs={0} md={1} />
+            <Grid item xs={12} md={4} sx={{ display: 'flex', alignItems: 'center' }}>
+              <Card>
+                <CardMedia component="img" image="/roles/Manager.png" />
+              </Card>
+            </Grid>
+            <Grid item xs={0} md={1} />
+            <Grid item xs={12} md={5} sx={{ display: 'flex', textAlign: 'start' }}>
+              <Stack spacing={3}>
+                <Typography variant="subtitle1">Drive performance through actionable insight </Typography>
+                <Typography>
+                  PeopleKit enables better management through data. Connect dots across data sources about your teams including performance, recruiting, active & passive listening,
+                  productivity tools, compensation, benchmarking, sales data and more.
+                </Typography>
+              </Stack>
+            </Grid>
+          </Grid>
+        </Fade>
+        <Fade in={tab === 5} timeout={1000}>
+          <Grid container spacing={5} sx={{ display: tab === 5 ? 'inherit' : 'none' }}>
+            <Grid item xs={0} md={1} />
+            <Grid item xs={12} md={4} sx={{ display: 'flex', alignItems: 'center' }}>
+              <Card>
+                <CardMedia component="img" image="/roles/Employee.png" />
+              </Card>
+            </Grid>
+            <Grid item xs={0} md={1} />
+            <Grid item xs={12} md={5} sx={{ display: 'flex', textAlign: 'start' }}>
+              <Stack spacing={3}>
+                <Typography variant="subtitle1">See your data; Own your data</Typography>
+                <Typography>
+                  Empower your workforce by enabling them to see the data you have about them, as your organization needs. Enabling workers to view their personal information about
+                  performance feedback, office attendance, and more has been shown to better equip them to meet or exceed expectations on the job.
+                </Typography>
+              </Stack>
+            </Grid>
+          </Grid>
+        </Fade>
       </Stack>
     </SectionContent>
   );

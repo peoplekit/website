@@ -6,11 +6,12 @@ export type SectionProps = {
   children: React.ReactNode;
   height?: string;
   backgroundColor?: string;
+  alignItems?: string;
 };
 
-export const Section: FC<SectionProps> = ({ id, height, children, backgroundColor }) => {
+export const Section: FC<SectionProps> = ({ id, height, children, backgroundColor, alignItems }) => {
   return (
-    <Box id={id} component="section" sx={{ minHeight: height || '60vh', display: 'flex', alignItems: 'center', backgroundColor }}>
+    <Box id={id} component="section" sx={{ minHeight: height || '60vh', display: 'flex', backgroundColor, alignItems }}>
       {children}
     </Box>
   );

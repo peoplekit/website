@@ -12,10 +12,10 @@ export const Home: FC = () => {
   return (
     <>
       <ScrollToHashElement />
-      <Section height="100vh">
+      <Section height="100vh" alignItems="center">
         <Main />
       </Section>
-      <Section height="70vh">
+      <Section height="75vh">
         <Roles />
       </Section>
       <Section height="20vh" backgroundColor={palette.primary.light}>
