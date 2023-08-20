@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Box, Button, Card, CardMedia, Grid, Stack, Typography } from '@mui/material';
+import { Box, Button, Card, Grid, Stack, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { ParallaxBanner, ParallaxBannerLayer } from 'react-scroll-parallax';
 import { SectionContent } from '@components/section.content.tsx';
