@@ -24,6 +24,8 @@ export const theme = createTheme({
       fontFamily: 'Poppins'
     },
     h2: {
+      fontWeight: 700,
+      fontSize: '56px',
       fontFamily: 'Poppins'
     },
     h3: {

@@ -1,5 +1,6 @@
 import { FC, useEffect, useState } from 'react';
 import { Card, CardMedia, Chip, Fade, Grid, Stack, Typography } from '@mui/material';
+import {SectionContent} from "@components/section.content.tsx";
 
 export const Roles: FC = () => {
   const [tab, setTab] = useState(0);
@@ -13,10 +14,10 @@ export const Roles: FC = () => {
     return () => clearInterval(interval);
   }, []);
 
-  return (
+  return (<SectionContent>
     <Stack spacing={3} sx={{ textAlign: 'center', alignItems: 'center' }}>
-      <Typography variant="h4" component="h2">
-        The ideal platform for any role
+      <Typography variant="h2" component="h2">
+        The ideal platform, for any role
       </Typography>
       <Grid container spacing={2} sx={{ display: 'flex', textAlign: 'center', alignItems: 'center' }}>
         <Grid item xs={6} sm={4} md={2}>
@@ -249,5 +250,6 @@ export const Roles: FC = () => {
         </Fade>
       )}
     </Stack>
+    </SectionContent>
   );
 };

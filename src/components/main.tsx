@@ -37,11 +37,7 @@ export const Main: FC = () => {
             </Stack>
           </Grid>
           <Grid item xs={12} md={6}>
-            <Card
-              sx={(theme) => ({
-                boxShadow: `4px 4px 15px 0px ${theme.palette.primary.main}55`
-              })}
-            >
+            <Card>
               <Video videoId="o6az9F1E8RI" />
             </Card>
           </Grid>

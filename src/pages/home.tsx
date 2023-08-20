@@ -9,7 +9,7 @@ export const Home: FC = () => {
   return (
     <>
       <ScrollToHashElement />
-      <Section>
+      <Section height="100vh">
         <Main />
       </Section>
       <Section>
