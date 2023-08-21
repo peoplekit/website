@@ -1,11 +1,11 @@
-import React, { FC } from 'react';
-import {Button, Grid, IconButton, Stack, TextField, Typography} from '@mui/material';
+import { FC } from 'react';
+import { Button, Grid, IconButton, Stack, TextField, Typography } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedinIn, faXTwitter } from '@fortawesome/free-brands-svg-icons';
 import { SectionContent } from '@components/section.content.tsx';
-import {IconProp} from "@fortawesome/fontawesome-svg-core";
-import {Link} from "react-router-dom";
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { Link } from 'react-router-dom';
 
 export const ContactUs: FC = () => {
   return (
@@ -19,14 +19,14 @@ export const ContactUs: FC = () => {
             <Typography>We typically reply in less than 1 business day.</Typography>
             <Stack direction="row">
               <Link to="https://www.linkedin.com/company/peoplekitai/" target="_blank">
-              <IconButton>
-                <FontAwesomeIcon icon={faLinkedinIn as IconProp} />
-              </IconButton>
+                <IconButton>
+                  <FontAwesomeIcon icon={faLinkedinIn as IconProp} />
+                </IconButton>
               </Link>
               <Link to="https://twitter.com/peoplekitai" target="_blank">
-              <IconButton>
-                <FontAwesomeIcon icon={faXTwitter as IconProp} />
-              </IconButton>
+                <IconButton>
+                  <FontAwesomeIcon icon={faXTwitter as IconProp} />
+                </IconButton>
               </Link>
             </Stack>
           </Stack>
