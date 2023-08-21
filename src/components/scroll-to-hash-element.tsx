@@ -1,4 +1,4 @@
-import { useMemo, useEffect, FC } from 'react';
+import { FC, useEffect, useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 
 export const ScrollToHashElement: FC = () => {

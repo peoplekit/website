@@ -35,7 +35,9 @@ export const theme = createTheme({
       fontFamily: 'Poppins'
     },
     h5: {
-      fontFamily: 'Poppins'
+      fontFamily: 'Poppins',
+      fontSize: '36px',
+      fontWeight: 500
     },
     h6: {
       fontWeight: 600,
@@ -44,6 +46,14 @@ export const theme = createTheme({
     subtitle1: {
       fontWeight: 500,
       fontSize: '24px'
+    },
+    subtitle2: {
+      color: '#971EEF',
+      fontSize: '16px',
+      fontFamily: 'Poppins'
+    },
+    body1: {
+      fontSize: '18px'
     }
   },
   palette: {

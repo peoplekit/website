@@ -8,13 +8,14 @@ import { useTheme } from '@mui/material';
 import { Banner22nd } from '@components/banner-22nd.tsx';
 import { BannerExcellence } from '@components/banner-excellence.tsx';
 import { Modules } from '@components/modules.tsx';
+import { Consultants } from '@components/consultants.tsx';
 
 export const Home: FC = () => {
   const { palette } = useTheme();
   return (
     <>
       <ScrollToHashElement />
-      <Section height="100vh" alignItems="center">
+      <Section id="platform" height="100vh" alignItems="center">
         <Main />
       </Section>
       <Section height="75vh">
@@ -29,7 +30,10 @@ export const Home: FC = () => {
       <Section height="50vh" alignItems="center" backgroundColor={palette.primary.dark}>
         <BannerExcellence />
       </Section>
-      <Section id="contact-us">
+      <Section id="consultants" alignItems="center" height="100vh">
+        <Consultants />
+      </Section>
+      <Section id="contact-us" alignItems="center" height="100vh">
         <ContactUs />
       </Section>
     </>
