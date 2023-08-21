@@ -11,10 +11,10 @@ export const Header: FC = () => {
         <Typography variant="h6" component="span" sx={{ mr: 2 }}>
           PeopleKit™
         </Typography>
-        <Link to="#platform">
+        <Link to="#platform" style={{ textDecoration: 'none' }}>
           <Button>Platform</Button>
         </Link>
-        <Link to="#consultants">
+        <Link to="#consultants" style={{ textDecoration: 'none' }}>
           <Button>Consultants</Button>
         </Link>
         <Box sx={{ flexGrow: 1 }} />
@@ -22,7 +22,7 @@ export const Header: FC = () => {
           <Button component="a" color="secondary" variant="contained" href="https://demo.peoplekit.com" target="_blank">
             View Demo
           </Button>
-          <Link to="#contact-us">
+          <Link to="#contact-us" style={{ textDecoration: 'none' }}>
             <Button variant="contained">Contact Us</Button>
           </Link>
         </Stack>

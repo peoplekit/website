@@ -19,13 +19,13 @@ export const Main: FC = () => {
                 Know your Workforce <Box sx={(theme) => ({ color: theme.palette.secondary.main })}>in No Time</Box>
               </Typography>
               <Typography variant="subtitle1">
-                PeopleKit™ is your people analytics platform, enabling teams and organizations to achieve the business outcomes you need to thrive
+                PeopleKit™ is your people analytics platform and consultancy, enabling teams and organizations to achieve the business outcomes you need to thrive
               </Typography>
               <Stack spacing={2} direction="row">
                 <Button size="large" component="a" color="secondary" variant="contained" href="https://demo.peoplekit.com" target="_blank">
                   View Demo
                 </Button>
-                <Link to="#contact-us">
+                <Link to="#contact-us" style={{ textDecoration: 'none' }}>
                   <Button variant="contained" size="large">
                     Contact Us
                   </Button>

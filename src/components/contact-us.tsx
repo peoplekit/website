@@ -13,17 +13,17 @@ export const ContactUs: FC = () => {
       <Grid container spacing={6}>
         <Grid item xs={12} md={6}>
           <Stack spacing={2}>
-            <Typography variant="subtitle2">CONTACT US AND WE'LL GET TO WORK</Typography>
-            <Typography variant="h5">Let’s Work Together</Typography>
+            <Typography variant="subtitle2">Let’s Work Together</Typography>
+            <Typography variant="h5">Contact us and we'll get to work</Typography>
             <Typography>Please use our contact form to hear from us.</Typography>
             <Typography>We typically reply in less than 1 business day.</Typography>
             <Stack direction="row">
-              <Link to="https://www.linkedin.com/company/peoplekitai/" target="_blank">
+              <Link to="https://www.linkedin.com/company/peoplekitai/" target="_blank" style={{ textDecoration: 'none' }}>
                 <IconButton>
                   <FontAwesomeIcon icon={faLinkedinIn as IconProp} />
                 </IconButton>
               </Link>
-              <Link to="https://twitter.com/peoplekitai" target="_blank">
+              <Link to="https://twitter.com/peoplekitai" target="_blank" style={{ textDecoration: 'none' }}>
                 <IconButton>
                   <FontAwesomeIcon icon={faXTwitter as IconProp} />
                 </IconButton>

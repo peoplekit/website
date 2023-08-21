@@ -16,8 +16,8 @@ export const Consultants: FC = () => {
               Derive <span style={{ color: palette.primary.main, fontStyle: 'italic' }}>Actionable Insight</span> from your Workforce
             </Typography>
             <Typography>
-              PeopleKit™'s consultants come with deep experience in Human Resources analytics and People Analytics powered by advanced technologies through the PeopleKit™ platform
-              other consultants can only dream of.
+              PeopleKit™'s consultants come with deep experience in Human Resources analytics and people analytics powered by advanced technologies through the PeopleKit™ platform
+              - tools other consultants can only dream of.
             </Typography>
             <Typography>
               PeopleKit™ consultants can help you take your organization's people analytics from 0 to 60 in no time or assist with targeted projects ranging from advanced analytics
@@ -25,7 +25,7 @@ export const Consultants: FC = () => {
               PeopleKit™ platform.
             </Typography>
             <Typography>Contact us today to get in touch with our consultants to meet your HR and People Analytics needs.</Typography>
-            <Link to="#contact-us">
+            <Link to="#contact-us" style={{ textDecoration: 'none' }}>
               <Button variant="contained">Contact Us</Button>
             </Link>
           </Stack>
