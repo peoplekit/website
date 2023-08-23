@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Button, Grid, IconButton, Stack, TextField, Typography } from '@mui/material';
+import { Autocomplete, Button, Grid, IconButton, Stack, TextField, Typography } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedinIn, faXTwitter } from '@fortawesome/free-brands-svg-icons';
@@ -32,7 +32,7 @@ export const ContactUs: FC = () => {
           </Stack>
         </Grid>
         <Grid item xs={0} md={6}>
-          <form action="https://api.web3forms.com/submit" method="POST">
+          <form action="https://formspree.io/f/mjvqwrlq" method="POST">
             <div className="h-captcha" data-captcha="true"></div>
             <input type="hidden" name="access_key" value="a960d821-50d8-42e7-9e69-5efe06be3be7" />
             <input type="hidden" name="from_name" value="PeopleKit - Contact Us" />
@@ -44,7 +44,11 @@ export const ContactUs: FC = () => {
               <TextField name="email" type="email" label="Work Email" variant="outlined" fullWidth required />
               <TextField type="text" name="role" label="Job Title" variant="outlined" fullWidth required />
               <TextField type="text" name="company" label="Company" variant="outlined" fullWidth required />
-              <TextField type="text" name="companySize" label="Company Size" variant="outlined" fullWidth required />
+              <Autocomplete
+                renderInput={(params) => <TextField type="text" name="companySize" label="Company Size" variant="outlined" required {...params} />}
+                fullWidth
+                options={['1-500', '501-1000', '1001-5000', '5000+']}
+              />
               <TextField name="message" label="Message" variant="outlined" fullWidth multiline rows={4} required />
               <Button endIcon={<FontAwesomeIcon icon={faPaperPlane} />} type="submit" variant="outlined">
                 Send
