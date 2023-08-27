@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from 'react';
-import { Box, Grid, Stack, Tab, Tabs, Typography, useTheme } from '@mui/material';
+import { Grid, Tab, Tabs, useMediaQuery, useTheme } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faAward,
@@ -27,12 +27,172 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { SectionContent } from '@components/section.content.tsx';
 import { TabPanel } from '@components/tab-panel.tsx';
+import { InfoSection, InfoSectionProps } from '@components/info-section.tsx';
+
+const sections: InfoSectionProps[][] = [
+  [
+    {
+      icon: faUserPlus,
+      title: 'Hire More Effectively',
+      items: [
+        'Interview feedback, candidate details, and other vital insights in one place',
+        'Apply AI insights to your talent pools to find recommended candidates for your roles',
+        'Use high-fidelity industry benchmarks to know what good looks like'
+      ]
+    },
+    {
+      icon: faPersonArrowUpFromLine,
+      title: 'Improve the Candidate Experience',
+      items: [
+        'Applicant & new hire listening posts and NPS surveys',
+        'See where candidates fall out of the application funnel',
+        'Drive a diverse workforce through the demographic and professional backgrounds of applicants'
+      ]
+    },
+    {
+      icon: faPersonRunning,
+      title: 'Speed up Time to Fill',
+      items: ['Find bottlenecks in the application & talent acquisition processes', 'Identify your most impactful hiring sources', 'View real-time recruiter capacity']
+    }
+  ],
+  [
+    {
+      icon: faPeopleRoof,
+      title: 'Build trust with underrepresented populations',
+      items: ['Robust security keeps demographics confidential', 'Describe journeys for groups of interest from hire to retire', 'Take action on the insights from key groups']
+    },
+    {
+      icon: faGears,
+      title: 'Bring diversity, equity, and inclusion into your flow of work',
+      items: ['Demographic filters can be applied across the PeopleKit™ platform']
+    },
+    {
+      icon: faScaleUnbalanced,
+      title: 'Benchmark yourself against your peers and industry',
+      items: ["PeopleKit's robust datasets include benchmarks from:"],
+      subItems: ['Macroeconomic sources', 'Private 3rd party benchmarks', 'Securely shared customer organization data']
+    }
+  ],
+  [
+    {
+      icon: faAward,
+      title: 'Set high-quality and actionable goals',
+      items: ['NLP analytics on workforce goals to assess quality and impact', 'Goal completion & feedback rates', 'Goal-setting best practices']
+    },
+    {
+      icon: faMagnifyingGlassChart,
+      title: 'Learnings insights - like a pro',
+      items: ["Visualize data from all your LMS's in one place", "Assess learning's impact on your organization", 'Course completion compliance tracking']
+    },
+    {
+      icon: faSignsPost,
+      title: 'Internal movement and career pathing',
+      items: ['See how workers move within your organization', 'Promotion, demotion, and lateral movement rates', 'Career sourcing based on your workforce']
+    }
+  ],
+  [
+    {
+      icon: faListUl,
+      title: 'Driver analyses providing tangible actions to take',
+      items: ['What’s causing workers to leave?', 'What’s causing workers to stay?', 'What locations and teams have the highest retention?']
+    },
+    {
+      icon: faBinoculars,
+      title: 'Look around corners',
+      items: ['Retention and attrition rate predictions for groups', 'Flight risk calculation on individuals', 'Model design & customization to suite your workforce']
+    },
+    {
+      icon: faScaleUnbalanced,
+      title: 'Compare yourself to others',
+      items: [
+        'See what good looks like through industry benchmark',
+        'Set goals for select organizations using internal criteria or external benchmarks',
+        'Get alerts when organizations rise above their targets or see a rapid increase in attrition'
+      ]
+    }
+  ],
+  [
+    {
+      icon: faHeadphones,
+      title: 'Active and Passive Listening',
+      items: [
+        'Active Listening through Engagement, Pulse, Onboarding, and Exit surveys',
+        'Passive Listening through productivity (GitHub; Saleforce; JIRA; Confluence), collaboration (), and work (office ultilization, badge taps, benefits usage, commute info) tools.',
+        'Ad Hoc surveys for every use case and every population'
+      ]
+    },
+    {
+      icon: faComments,
+      title: 'Statistically cutting-edge',
+      items: [
+        'Adaptive sampling avoiding survey fatigue and delivering quality responses',
+        'Results modeling suggesting actions for actionable listening',
+        'Driver analyses and predicted affects of interventions'
+      ]
+    },
+    {
+      icon: faEyeSlash,
+      title: 'Privacy above all else',
+      items: ['Open, Confidential, and Anonymous surveys', 'Ability to view one’s own responses', 'Right to be forgotten compliant']
+    }
+  ],
+  [
+    {
+      icon: faMapLocationDot,
+      title: 'Strategic Workforce Planning at your fingertips',
+      items: [
+        'Set organizational goals, budgets, and plans cascading them stakeholders',
+        'Define capacity required (labor demand) and capacity available (labor supply) under an array of plans and scenarios',
+        'Add granularity of positions along the way, starting with simple headcount’s that develop into clearly defined roles'
+      ]
+    },
+    {
+      icon: faStopwatch20,
+      title: 'Dynamic, real-time planning',
+      items: [
+        'Use your most up to date data',
+        'Change plans as your progress through a quarter, reacting to real-time events',
+        'Use your people data (including turnover, engagement, and performance) to automatically adapt your plan'
+      ]
+    }
+  ],
+  [
+    {
+      icon: faMapLocationDot,
+      title: 'Let us map skills for you',
+      items: [
+        'Use AI to map your skills to a normalized, industry-wide taxonomy',
+        'Identify gaps in your workforce’s skills, high demand skills based on your open roles, and where skills could flow within the organization',
+        'Tie in Workforce Planning to assess skill requirements in your workforce planning'
+      ]
+    },
+    {
+      icon: faAward,
+      title: 'Drive outcomes with skills goals',
+      items: [
+        'Leader can identify the skills they need to power their outcomes, including the proficiency each role has in that skill',
+        'Upskill your current workforce for the future with gap identification and in-system training',
+        'Skills are pervasive throughout PeopleKit, built into recruiting, position details, workforce planning, and learning'
+      ]
+    },
+    {
+      icon: faFileShield,
+      title: 'Validate skills with proof-of-work',
+      items: [
+        'Leaders can validate experiences of teams. Peers can validate the skills of their peers',
+        'Self-identified and validated proficiency levels in skills & capabilities',
+        'In-system knowledge checks further validate skills'
+      ]
+    }
+  ]
+];
 
 export const Modules: FC = () => {
   const [value, setValue] = useState(0);
   const [carousel, setCarousel] = useState<number>(0);
 
-  const { palette } = useTheme();
+  const { breakpoints } = useTheme();
+  const isMobile = useMediaQuery(breakpoints.down('sm'));
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -47,6 +207,7 @@ export const Modules: FC = () => {
       <Tabs
         sx={{ width: '100%', mt: 6 }}
         value={value}
+        orientation={isMobile ? 'vertical' : 'horizontal'}
         variant="fullWidth"
         centered
         onChange={(_, value) => {
@@ -62,258 +223,15 @@ export const Modules: FC = () => {
         <Tab icon={<FontAwesomeIcon icon={faPersonWalkingArrowRight} size="2x" />} label="Planning" />
         <Tab icon={<FontAwesomeIcon icon={faBookOpenReader} size="2x" />} label="Skills" />
       </Tabs>
-      <TabPanel index={0} value={value}>
-        <Grid container spacing={4}>
-          <Grid item sm={4} textAlign="right" alignItems="center">
-            <FontAwesomeIcon icon={faUserPlus} size="5x" color={palette.secondary.main} />
+      {sections.map((section, index) => (
+        <TabPanel key={index} index={index} value={value}>
+          <Grid container spacing={4}>
+            {section.map((s, index) => (
+              <InfoSection key={index} {...s} />
+            ))}
           </Grid>
-          <Grid item sm={8}>
-            <Stack gap={1}>
-              <Typography variant="subtitle1">Hire More Effectively</Typography>
-              <Typography>• Interview feedback, candidate details, and other vital insights in one place</Typography>
-              <Typography>• Apply AI insights to your talent pools to find recommended candidates for your roles</Typography>
-              <Typography>• Use high-fidelity industry benchmarks to know what good looks like</Typography>
-            </Stack>
-          </Grid>
-          <Grid item sm={4} textAlign="right" alignItems="center">
-            <FontAwesomeIcon icon={faPersonArrowUpFromLine} size="5x" color={palette.secondary.main} />
-          </Grid>
-          <Grid item sm={8}>
-            <Stack gap={1}>
-              <Typography variant="subtitle1">Improve the Candidate Experience</Typography>
-              <Typography>• Applicant & new hire listening posts and NPS surveys</Typography>
-              <Typography>• See where candidates fall out of the application funnel</Typography>
-              <Typography>• Drive a diverse workforce through the demographic and professional backgrounds of applicants</Typography>
-            </Stack>
-          </Grid>
-          <Grid item sm={4} textAlign="right" alignItems="center">
-            <FontAwesomeIcon icon={faPersonRunning} size="5x" color={palette.secondary.main} />
-          </Grid>
-          <Grid item sm={8}>
-            <Stack gap={1}>
-              <Typography variant="subtitle1">Speed up Time to Fill</Typography>
-              <Typography>• Find bottlenecks in the application & talent acquisition processes</Typography>
-              <Typography>• Identify your most impactful hiring sources</Typography>
-              <Typography>• View real-time recruiter capacity</Typography>
-            </Stack>
-          </Grid>
-        </Grid>
-      </TabPanel>
-      <TabPanel index={1} value={value}>
-        <Grid container spacing={4}>
-          <Grid item sm={4} textAlign="right" alignItems="center">
-            <FontAwesomeIcon icon={faPeopleRoof} size="5x" color={palette.secondary.main} />
-          </Grid>
-          <Grid item sm={8}>
-            <Stack gap={1}>
-              <Typography variant="subtitle1">Build trust with underrepresented populations</Typography>
-              <Typography>• Robust security keeps demographics confidential</Typography>
-              <Typography>• Describe journeys for groups of interest from hire to retire</Typography>
-              <Typography>• Take action on the insights from key groups</Typography>
-            </Stack>
-          </Grid>
-          <Grid item sm={4} textAlign="right" alignItems="center">
-            <FontAwesomeIcon icon={faGears} size="5x" color={palette.secondary.main} />
-          </Grid>
-          <Grid item sm={8}>
-            <Stack gap={1}>
-              <Typography variant="subtitle1">Bring diversity, equity, and inclusion into your flow of work</Typography>
-              <Typography>• Demographic filters can be applied across the PeopleKit™ platform</Typography>
-            </Stack>
-          </Grid>
-          <Grid item sm={4} textAlign="right" alignItems="center">
-            <FontAwesomeIcon icon={faScaleUnbalanced} size="5x" color={palette.secondary.main} />
-          </Grid>
-          <Grid item sm={8}>
-            <Stack gap={1}>
-              <Typography variant="subtitle1">Benchmark yourself against your peers and industry</Typography>
-              <Typography>• PeopleKit's robust datasets include benchmarks from:</Typography>
-              <Box sx={{ ml: 2 }}>
-                <Typography>• Macroeconomic sources</Typography>
-                <Typography>• Private 3rd party benchmarks</Typography>
-                <Typography>• Securely shared customer organization data</Typography>
-              </Box>
-            </Stack>
-          </Grid>
-        </Grid>
-      </TabPanel>
-      <TabPanel index={2} value={value}>
-        <Grid container spacing={4}>
-          <Grid item sm={4} textAlign="right" alignItems="center">
-            <FontAwesomeIcon icon={faAward} size="5x" color={palette.secondary.main} />
-          </Grid>
-          <Grid item sm={8}>
-            <Stack gap={1}>
-              <Typography variant="subtitle1">Set high-quality and actionable goals</Typography>
-              <Typography>• NLP analytics on workforce goals to assess quality and impact</Typography>
-              <Typography>• Goal completion & feedback rates</Typography>
-              <Typography>• Goal-setting best practices</Typography>
-            </Stack>
-          </Grid>
-          <Grid item sm={4} textAlign="right" alignItems="center">
-            <FontAwesomeIcon icon={faMagnifyingGlassChart} size="5x" color={palette.secondary.main} />
-          </Grid>
-          <Grid item sm={8}>
-            <Stack gap={1}>
-              <Typography variant="subtitle1">Learnings insights - like a pro</Typography>
-              <Typography>• Visualize data from all your LMS's in one place</Typography>
-              <Typography>• Assess learning's impact on your organization</Typography>
-              <Typography>• Course completion compliance tracking</Typography>
-            </Stack>
-          </Grid>
-          <Grid item sm={4} textAlign="right" alignItems="center">
-            <FontAwesomeIcon icon={faSignsPost} size="5x" color={palette.secondary.main} />
-          </Grid>
-          <Grid item sm={8}>
-            <Stack gap={1}>
-              <Typography variant="subtitle1">Internal movement and career pathing</Typography>
-              <Typography>• See how workers move within your organization</Typography>
-              <Typography>• Promotion, demotion, and lateral movement rates</Typography>
-              <Typography>• Career sourcing based on your workforce</Typography>
-            </Stack>
-          </Grid>
-        </Grid>
-      </TabPanel>
-      <TabPanel index={3} value={value}>
-        <Grid container spacing={4}>
-          <Grid item sm={4} textAlign="right" alignItems="center">
-            <FontAwesomeIcon icon={faListUl} size="5x" color={palette.secondary.main} />
-          </Grid>
-          <Grid item sm={8}>
-            <Stack gap={1}>
-              <Typography variant="subtitle1">Driver analyses providing tangible actions to take</Typography>
-              <Typography>• What’s causing workers to leave?</Typography>
-              <Typography>• What’s causing workers to stay?</Typography>
-              <Typography>• What locations and teams have the highest retention?</Typography>
-            </Stack>
-          </Grid>
-          <Grid item sm={4} textAlign="right" alignItems="center">
-            <FontAwesomeIcon icon={faBinoculars} size="5x" color={palette.secondary.main} />
-          </Grid>
-          <Grid item sm={8}>
-            <Stack gap={1}>
-              <Typography variant="subtitle1">Look around corners</Typography>
-              <Typography>• Retention and attrition rate predictions for groups</Typography>
-              <Typography>• Flight risk calculation on individuals</Typography>
-              <Typography>• Model design & customization to suite your workforce</Typography>
-            </Stack>
-          </Grid>
-          <Grid item sm={4} textAlign="right" alignItems="center">
-            <FontAwesomeIcon icon={faScaleUnbalanced} size="5x" color={palette.secondary.main} />
-          </Grid>
-          <Grid item sm={8}>
-            <Stack gap={1}>
-              <Typography variant="subtitle1">Compare yourself to others</Typography>
-              <Typography>• See what good looks like through industry benchmark</Typography>
-              <Typography>• Set goals for select organizations using internal criteria or external benchmarks</Typography>
-              <Typography>• Get alerts when organizations rise above their targets or see a rapid increase in attrition</Typography>
-            </Stack>
-          </Grid>
-        </Grid>
-      </TabPanel>
-      <TabPanel index={4} value={value}>
-        <Grid container spacing={4}>
-          <Grid item sm={4} textAlign="right" alignItems="center">
-            <FontAwesomeIcon icon={faHeadphones} size="5x" color={palette.secondary.main} />
-          </Grid>
-          <Grid item sm={8}>
-            <Stack gap={1}>
-              <Typography variant="subtitle1">Active and Passive Listening</Typography>
-              <Typography>• Active Listening through Engagement, Pulse, Onboarding, and Exit surveys</Typography>
-              <Typography>
-                • Passive Listening through productivity (GitHub; Saleforce; JIRA; Confluence), collaboration (), and work (office ultilization, badge taps, benefits usage, commute
-                info) tools.
-              </Typography>
-              <Typography>• Ad Hoc surveys for every use case and every population</Typography>
-            </Stack>
-          </Grid>
-          <Grid item sm={4} textAlign="right" alignItems="center">
-            <FontAwesomeIcon icon={faComments} size="5x" color={palette.secondary.main} />
-          </Grid>
-          <Grid item sm={8}>
-            <Stack gap={1}>
-              <Typography variant="subtitle1">Statistically cutting-edge</Typography>
-              <Typography>• Adaptive sampling avoiding survey fatigue and delivering quality responses</Typography>
-              <Typography>• Results modeling suggesting actions for actionable listening</Typography>
-              <Typography>• Driver analyses and predicted affects of interventions</Typography>
-            </Stack>
-          </Grid>
-          <Grid item sm={4} textAlign="right" alignItems="center">
-            <FontAwesomeIcon icon={faEyeSlash} size="5x" color={palette.secondary.main} />
-          </Grid>
-          <Grid item sm={8}>
-            <Stack gap={1}>
-              <Typography variant="subtitle1">Privacy above all else</Typography>
-              <Typography>• Open, Confidential, and Anonymous surveys</Typography>
-              <Typography>• Ability to view one’s own responses</Typography>
-              <Typography>• Right to be forgotten compliant</Typography>
-            </Stack>
-          </Grid>
-        </Grid>
-      </TabPanel>
-      <TabPanel index={5} value={value}>
-        <Grid container spacing={4}>
-          <Grid item sm={4} textAlign="right" alignItems="center">
-            <FontAwesomeIcon icon={faMapLocationDot} size="5x" color={palette.secondary.main} />
-          </Grid>
-          <Grid item sm={8}>
-            <Stack gap={1}>
-              <Typography variant="subtitle1">Strategic Workforce Planning at your fingertips</Typography>
-              <Typography>• Set organizational goals, budgets, and plans cascading them stakeholders</Typography>
-              <Typography>• Define capacity required (labor demand) and capacity available (labor supply) under an array of plans and scenarios</Typography>
-              <Typography>• Add granularity of positions along the way, starting with simple headcount’s that develop into clearly defined roles</Typography>
-            </Stack>
-          </Grid>
-          <Grid item sm={4} textAlign="right" alignItems="center">
-            <FontAwesomeIcon icon={faStopwatch20} size="5x" color={palette.secondary.main} />
-          </Grid>
-          <Grid item sm={8}>
-            <Stack gap={1}>
-              <Typography variant="subtitle1">Dynamic, real-time planning</Typography>
-              <Typography>• Use your most up to date data</Typography>
-              <Typography>• Change plans as your progress through a quarter, reacting to real-time events</Typography>
-              <Typography>• Use your people data (including turnover, engagement, and performance) to automatically adapt your plan</Typography>
-            </Stack>
-          </Grid>
-        </Grid>
-      </TabPanel>
-      <TabPanel index={6} value={value}>
-        <Grid container spacing={4}>
-          <Grid item sm={4} textAlign="right" alignItems="center">
-            <FontAwesomeIcon icon={faMapLocationDot} size="5x" color={palette.secondary.main} />
-          </Grid>
-          <Grid item sm={8}>
-            <Stack gap={1}>
-              <Typography variant="subtitle1">Let us map skills for you</Typography>
-              <Typography>• Use AI to map your skills to a normalized, industry-wide taxonomy</Typography>
-              <Typography>• Identify gaps in your workforce’s skills, high demand skills based on your open roles, and where skills could flow within the organization</Typography>
-              <Typography>• Tie in Workforce Planning to assess skill requirements in your workforce planning</Typography>
-            </Stack>
-          </Grid>
-          <Grid item sm={4} textAlign="right" alignItems="center">
-            <FontAwesomeIcon icon={faAward} size="5x" color={palette.secondary.main} />
-          </Grid>
-          <Grid item sm={8}>
-            <Stack gap={1}>
-              <Typography variant="subtitle1">Drive outcomes with skills goals</Typography>
-              <Typography>• Leader can identify the skills they need to power their outcomes, including the proficiency each role has in that skill</Typography>
-              <Typography>• Upskill your current workforce for the future with gap identification and in-system training</Typography>
-              <Typography>• Skills are pervasive throughout PeopleKit, built into recruiting, position details, workforce planning, and learning</Typography>
-            </Stack>
-          </Grid>
-          <Grid item sm={4} textAlign="right" alignItems="center">
-            <FontAwesomeIcon icon={faFileShield} size="5x" color={palette.secondary.main} />
-          </Grid>
-          <Grid item sm={8}>
-            <Stack gap={1}>
-              <Typography variant="subtitle1">Validate skills with proof-of-work</Typography>
-              <Typography>• Leaders can validate experiences of teams. Peers can validate the skills of their peers</Typography>
-              <Typography>• Self-identified and validated proficiency levels in skills & capabilities</Typography>
-              <Typography>• In-system knowledge checks further validate skills</Typography>
-            </Stack>
-          </Grid>
-        </Grid>
-      </TabPanel>
+        </TabPanel>
+      ))}
     </SectionContent>
   );
 };

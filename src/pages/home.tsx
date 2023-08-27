@@ -9,6 +9,7 @@ import { Modules } from '@pages/sections/modules.tsx';
 import { BannerExcellence } from '@pages/sections/banner-excellence.tsx';
 import { Consultants } from '@pages/sections/consultants.tsx';
 import { ContactUs } from '@pages/sections/contact-us.tsx';
+import Footer from '@components/footer.tsx';
 
 export const Home: FC = () => {
   const { palette } = useTheme();
@@ -34,11 +35,12 @@ export const Home: FC = () => {
         <Consultants />
       </Section>
       <Container maxWidth="xl">
-        <Divider />
+        <Divider sx={{ mb: 10 }} />
       </Container>
       <Section id="contact-us" alignItems="center" height="100vh">
         <ContactUs />
       </Section>
+      <Footer />
     </>
   );
 };
