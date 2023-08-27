@@ -20,7 +20,7 @@ export const theme = createTheme({
     },
     h1: {
       fontWeight: 700,
-      fontSize: '90px',
+      fontSize: '6rem',
       fontFamily: 'Poppins'
     },
     h2: {
