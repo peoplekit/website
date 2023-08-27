@@ -47,7 +47,7 @@ export const ContactUs: FC = () => {
               <Autocomplete
                 renderInput={(params) => <TextField type="text" name="companySize" label="Company Size" variant="outlined" required {...params} />}
                 fullWidth
-                options={['1-500', '501-1000', '1001-5000', '5000+']}
+                options={['1-500', '500-1,000', '1,000-5,000', '5,000-10,000', '10,000+']}
               />
               <TextField name="message" label="Message" variant="outlined" fullWidth multiline rows={4} required />
               <Button endIcon={<FontAwesomeIcon icon={faPaperPlane} />} type="submit" variant="outlined">
