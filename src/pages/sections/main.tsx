@@ -17,9 +17,7 @@ export const Main: FC = () => {
             <Stack spacing={2} sx={{ textAlign: 'center', alignItems: 'center' }}>
               <Typography variant="h1" component="h1" sx={{ fontSize: { xs: '4rem' } }}>
                 Know your Workforce
-                <Box sx={(theme) => ({ color: theme.palette.secondary.main, fontSize: { xs: '4rem' } })}>
-                  in No Time
-                </Box>
+                <Box sx={(theme) => ({ color: theme.palette.secondary.main, fontSize: { xs: '4rem' } })}>in No Time</Box>
               </Typography>
               <Typography variant="subtitle1" sx={{ fontSize: { xs: '0.9rem', md: '1.1rem' } }}>
                 PeopleKit™ is your people analytics platform and consultancy, enabling teams and organizations to achieve the business outcomes you need to thrive

@@ -2,13 +2,13 @@ import { FC } from 'react';
 import { Section } from '@components/section';
 import { ScrollToHashElement } from '@components/scroll-to-hash-element';
 import { Container, Divider, useTheme } from '@mui/material';
-import {Main} from "@pages/sections/main.tsx";
-import {Roles} from "@pages/sections/roles.tsx";
-import {Banner22nd} from "@pages/sections/banner-22nd.tsx";
-import {Modules} from "@pages/sections/modules.tsx";
-import {BannerExcellence} from "@pages/sections/banner-excellence.tsx";
-import {Consultants} from "@pages/sections/consultants.tsx";
-import {ContactUs} from "@pages/sections/contact-us.tsx";
+import { Main } from '@pages/sections/main.tsx';
+import { Roles } from '@pages/sections/roles.tsx';
+import { Banner22nd } from '@pages/sections/banner-22nd.tsx';
+import { Modules } from '@pages/sections/modules.tsx';
+import { BannerExcellence } from '@pages/sections/banner-excellence.tsx';
+import { Consultants } from '@pages/sections/consultants.tsx';
+import { ContactUs } from '@pages/sections/contact-us.tsx';
 
 export const Home: FC = () => {
   const { palette } = useTheme();

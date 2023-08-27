@@ -1,8 +1,8 @@
-import {FC, useState} from 'react';
+import { FC, useState } from 'react';
 import { AppBar, Box, Button, IconButton, Menu, MenuItem, Stack, Toolbar, Typography, useTheme } from '@mui/material';
 import { Link } from 'react-router-dom';
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faBars} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 export const Header: FC = () => {
   const theme = useTheme();
@@ -30,8 +30,12 @@ export const Header: FC = () => {
             <FontAwesomeIcon icon={faBars} />
           </IconButton>
           <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleClose}>
-            <MenuItem onClick={handleClose} component={Link} to="#platform">Platform</MenuItem>
-            <MenuItem onClick={handleClose} component={Link} to="#consultants">Consultants</MenuItem>
+            <MenuItem onClick={handleClose} component={Link} to="#platform">
+              Platform
+            </MenuItem>
+            <MenuItem onClick={handleClose} component={Link} to="#consultants">
+              Consultants
+            </MenuItem>
             <MenuItem onClick={handleClose}>
               <Button component="a" color="secondary" variant="contained" href="https://demo.peoplekit.com" target="_blank">
                 View Demo

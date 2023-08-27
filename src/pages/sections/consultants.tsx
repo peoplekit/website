@@ -11,7 +11,7 @@ export const Consultants: FC = () => {
       <Grid container spacing={6}>
         <Grid item xs={12} md={6}>
           <Stack spacing={6}>
-            <Typography variant="subtitle2">ABOUT OUR CONSULTANTS</Typography>
+            <Typography variant="subtitle2">About Our Consultants</Typography>
             <Typography variant="h5">
               Derive <span style={{ color: palette.primary.main, fontStyle: 'italic' }}>Actionable Insight</span> from your Workforce
             </Typography>
