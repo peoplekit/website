@@ -6,8 +6,15 @@ import { faLinkedinIn, faXTwitter } from '@fortawesome/free-brands-svg-icons';
 import { SectionContent } from '@components/section.content.tsx';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { Link } from 'react-router-dom';
+import { Form, Formik } from 'formik';
+import { useMutation } from '@apollo/client';
+import { useSnackbar } from '../../contexts/snackbar.context.tsx';
+import { CONTACT_US_DOCUMENT } from '@graphql/graphql.ts';
+import { LoadingButton } from '@mui/lab';
 
 export const ContactUs: FC = () => {
+  const { pushMessage } = useSnackbar();
+  const [contactUs] = useMutation(CONTACT_US_DOCUMENT);
   return (
     <SectionContent>
       <Grid container spacing={6}>
@@ -32,30 +39,57 @@ export const ContactUs: FC = () => {
           </Stack>
         </Grid>
         <Grid item sm={12} md={6}>
-          <form action="https://formspree.io/f/mjvqwrlq" method="POST">
-            <div className="h-captcha" data-captcha="true"></div>
-            <input type="hidden" name="access_key" value="a960d821-50d8-42e7-9e69-5efe06be3be7" />
-            <input type="hidden" name="from_name" value="PeopleKit - Contact Us" />
-            <Stack spacing={3}>
-              <Stack spacing={3} direction="row" sx={{ width: '100%' }}>
-                <TextField name="firstName" label="First Name" variant="outlined" fullWidth required />
-                <TextField name="lastName" label="Last Name" variant="outlined" fullWidth required />
-              </Stack>
-              <TextField name="email" type="email" label="Work Email" variant="outlined" fullWidth required />
-              <TextField type="text" name="role" label="Job Title" variant="outlined" fullWidth required />
-              <TextField type="text" name="company" label="Company" variant="outlined" fullWidth required />
-              <Autocomplete
-                renderInput={(params) => <TextField type="text" name="companySize" label="Company Size" variant="outlined" required {...params} />}
-                fullWidth
-                options={['1-500', '500-1,000', '1,000-5,000', '5,000-10,000', '10,000+']}
-              />
-              <TextField name="message" label="Message" variant="outlined" fullWidth multiline rows={4} required />
-              <Button endIcon={<FontAwesomeIcon icon={faPaperPlane} />} type="submit" variant="outlined">
-                Send
-              </Button>
-            </Stack>
-            <input type="hidden" name="recaptcha_response" id="recaptchaResponse" />
-          </form>
+          <Formik
+            initialValues={{
+              firstName: '',
+              lastName: '',
+              email: '',
+              jobTitle: '',
+              company: '',
+              headcount: '',
+              message: ''
+            }}
+            onSubmit={async (values, formikHelpers) => {
+              await contactUs({
+                variables: {
+                  firstName: values.firstName,
+                  lastName: values.lastName,
+                  email: values.email,
+                  jobTitle: values.jobTitle,
+                  company: values.company,
+                  headcount: values.headcount,
+                  message: values.message
+                }
+              });
+              pushMessage('Thank you for contacting us! We will get back to you shortly.', 'success');
+              formikHelpers.setSubmitting(false);
+              formikHelpers.resetForm();
+            }}
+          >
+            {({ isSubmitting }) => (
+              <Form>
+                <Stack spacing={3}>
+                  <Stack spacing={3} direction="row" sx={{ width: '100%' }}>
+                    <TextField name="firstName" label="First Name" variant="outlined" fullWidth required autoComplete="given-name" disabled={isSubmitting} />
+                    <TextField name="lastName" label="Last Name" variant="outlined" fullWidth required autoComplete="family-name" disabled={isSubmitting} />
+                  </Stack>
+                  <TextField name="email" type="email" label="Work Email" variant="outlined" fullWidth required autoComplete="email" disabled={isSubmitting} />
+                  <TextField type="text" name="jobTitle" label="Job Title" variant="outlined" fullWidth required disabled={isSubmitting} />
+                  <TextField type="text" name="company" label="Company" variant="outlined" fullWidth required disabled={isSubmitting} />
+                  <Autocomplete
+                    disabled={isSubmitting}
+                    renderInput={(params) => <TextField type="text" name="headcount" label="Company Size" variant="outlined" required {...params} />}
+                    fullWidth
+                    options={['1-500', '500-1,000', '1,000-5,000', '5,000-10,000', '10,000+']}
+                  />
+                  <TextField name="message" label="Message" variant="outlined" fullWidth multiline rows={4} required disabled={isSubmitting} />
+                  <LoadingButton endIcon={<FontAwesomeIcon icon={faPaperPlane} />} type="submit" variant="outlined" loading={isSubmitting} disabled={isSubmitting}>
+                    Send
+                  </LoadingButton>
+                </Stack>
+              </Form>
+            )}
+          </Formik>
         </Grid>
       </Grid>
     </SectionContent>
