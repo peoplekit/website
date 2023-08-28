@@ -11,7 +11,7 @@ export const ContactUs: FC = () => {
   return (
     <SectionContent>
       <Grid container spacing={6}>
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} sm={12} md={6}>
           <Stack spacing={2}>
             <Typography variant="subtitle2">Let’s Work Together</Typography>
             <Typography variant="h5">Contact us and we'll get to work</Typography>
@@ -31,7 +31,7 @@ export const ContactUs: FC = () => {
             </Stack>
           </Stack>
         </Grid>
-        <Grid item xs={0} md={6}>
+        <Grid item sm={12} md={6}>
           <form action="https://formspree.io/f/mjvqwrlq" method="POST">
             <div className="h-captcha" data-captcha="true"></div>
             <input type="hidden" name="access_key" value="a960d821-50d8-42e7-9e69-5efe06be3be7" />
