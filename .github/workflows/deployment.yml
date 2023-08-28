@@ -8,7 +8,7 @@ on:
 jobs:
   deploy:
     env:
-      VITE_API_HOST: https://development.peoplekit.com/graphql
+      VITE_API_HOST: https://development-api.peoplekit.com/graphql
     permissions:
       contents: write
     environment:
