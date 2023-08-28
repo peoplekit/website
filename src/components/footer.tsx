@@ -19,9 +19,9 @@ const Footer: FC = () => {
                 <Typography variant="h4">PeopleKit</Typography>
               </Stack>
               <Typography sx={{ mt: 4 }}>
-                At PeopleKit, we're not just a tech company; we're your strategic partner in weaving the future of business. With a deep-rooted commitment to innovation and
-                understanding, we transcend the ordinary to deliver solutions uniquely tailored to your company's aspirations. Dive into a partnership that prioritizes your success
-                and understands the rhythm of the ever-evolving business landscape.
+                At PeopleKit we're not just a tech company, we're your strategic partner in navigating the future of business. With a deep-rooted commitment to innovation and
+                understanding we transcend the ordinary to deliver solutions uniquely tailored to your company's aspirations. Contact us today to dive into a partnership that
+                prioritizes your success and understands the rhythm of the ever-evolving business landscape.
               </Typography>
             </Grid>
 
