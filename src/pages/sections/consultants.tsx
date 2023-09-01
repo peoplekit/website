@@ -3,6 +3,7 @@ import { Button, Grid, Stack, Typography, useTheme } from '@mui/material';
 import { SectionContent } from '@components/section.content.tsx';
 import { Link } from 'react-router-dom';
 import { ParallaxBanner, ParallaxBannerLayer } from 'react-scroll-parallax';
+import { Paths } from '@constants/paths.ts';
 
 export const Consultants: FC = () => {
   const { palette } = useTheme();
@@ -25,7 +26,7 @@ export const Consultants: FC = () => {
               PeopleKit™ platform.
             </Typography>
             <Typography>Contact us today to get in touch with our consultants to meet your HR and People Analytics needs.</Typography>
-            <Link to="#contact-us" style={{ textDecoration: 'none' }}>
+            <Link to={Paths.CONTACT_US} style={{ textDecoration: 'none' }}>
               <Button variant="contained">Contact Us</Button>
             </Link>
           </Stack>

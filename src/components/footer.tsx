@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedinIn, faXTwitter } from '@fortawesome/free-brands-svg-icons';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { Link } from 'react-router-dom';
+import { Paths } from '@constants/paths.ts';
 
 const Footer: FC = () => {
   return (
@@ -13,7 +14,7 @@ const Footer: FC = () => {
         <Container maxWidth="xl">
           <Grid container spacing={5} justifyContent="center">
             {/* Company Info */}
-            <Grid item xs={12} md={4} container alignItems="center" spacing={2} direction="row">
+            <Grid item xs={12} md={5} container alignItems="center" spacing={2} direction="row">
               <Stack direction="row" spacing={3} alignItems="center">
                 <img src="/logo.png" alt="PeopleKit Logo" style={{ width: '50px', height: '50px' }} />
                 <Typography variant="h4">PeopleKit</Typography>
@@ -26,20 +27,42 @@ const Footer: FC = () => {
             </Grid>
 
             {/* Quick Links */}
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} md={2}>
               <Typography variant="h6">Quick Links</Typography>
               <Stack spacing={2} sx={{ mt: 2 }}>
-                <Link to="https://demo.peoplekit.com" style={{ textDecoration: 'none' }} target="_blank">
+                <Link to={Paths.DEMO} style={{ textDecoration: 'none' }} target="_blank">
                   <Typography color="white">Demo</Typography>
                 </Link>
-                <Link to="#contact-us" style={{ textDecoration: 'none' }}>
+                <Link to={Paths.CONTACT_US} style={{ textDecoration: 'none' }}>
                   <Typography color="white">Contact Us</Typography>
                 </Link>
               </Stack>
             </Grid>
 
+            {/* Legal Links */}
+            <Grid item xs={12} md={2}>
+              <Typography variant="h6">Legal</Typography>
+              <Stack spacing={2} sx={{ mt: 2 }}>
+                <Link to={Paths.PRIVACY_POLICY} style={{ textDecoration: 'none' }} target="_blank">
+                  <Typography color="white">Privacy Policy</Typography>
+                </Link>
+                <Link to={Paths.TERMS} style={{ textDecoration: 'none' }} target="_blank">
+                  <Typography color="white">Terms of Use</Typography>
+                </Link>
+                <Link to={Paths.COOKIE_POLICY} style={{ textDecoration: 'none' }} target="_blank">
+                  <Typography color="white">Cookie Policy</Typography>
+                </Link>
+                <Link to={Paths.DISCLAIMER} style={{ textDecoration: 'none' }} target="_blank">
+                  <Typography color="white">Disclaimer</Typography>
+                </Link>
+                <Link to={Paths.ACCEPTABLE_USE_POLICY} style={{ textDecoration: 'none' }} target="_blank">
+                  <Typography color="white">Acceptable Use</Typography>
+                </Link>
+              </Stack>
+            </Grid>
+
             {/* Social Media */}
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} md={2}>
               <Typography variant="h6">Follow Us</Typography>
               <Box display="flex" gap={2}>
                 <IconButton color="inherit" component="a" href="#">
