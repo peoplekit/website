@@ -1,4 +1,4 @@
-import { Grid, Typography, Stack, useTheme, Box, useMediaQuery } from '@mui/material';
+import { Box, Grid, Stack, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FC } from 'react';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';

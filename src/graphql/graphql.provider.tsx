@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { ApolloClient, ApolloProvider, from, HttpLink, InMemoryCache } from '@apollo/client';
+
 export interface GraphqlProviderProps {
   children: React.ReactNode;
 }

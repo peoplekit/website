@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Box, Grid, Typography, IconButton, Stack, Container, Toolbar } from '@mui/material';
+import { Box, Container, Grid, IconButton, Stack, Toolbar, Typography } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedinIn, faXTwitter } from '@fortawesome/free-brands-svg-icons';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';

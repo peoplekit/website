@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from 'react';
-import { Grid, Stack, Typography } from '@mui/material';
+import { Box, Grid, Stack, Typography } from '@mui/material';
 import { SectionContent } from '@components/section.content.tsx';
 import { RoleChip } from '@components/role-chip.tsx';
 import { RoleContent } from '@components/role-content.tsx';
@@ -76,9 +76,11 @@ export const Roles: FC = () => {
             </Grid>
           ))}
         </Grid>
-        {rolesData.map((role, index) => (
-          <RoleContent key={index} roleImage={role.image} title={role.title} description={role.description} isActive={tab === index} />
-        ))}
+        <Box width="100%" display="flex">
+          {rolesData.map((role, index) => (
+            <RoleContent key={index} roleImage={role.image} title={role.title} description={role.description} isActive={tab === index} />
+          ))}
+        </Box>
       </Stack>
     </SectionContent>
   );

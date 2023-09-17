@@ -10,7 +10,7 @@ interface RoleContentProps {
 
 export const RoleContent: FC<RoleContentProps> = ({ roleImage, title, description, isActive }) => (
   <Fade in={isActive} timeout={1000}>
-    <Grid container spacing={5} sx={{ display: isActive ? 'inherit' : 'none' }}>
+    <Grid container spacing={2} sx={{ display: isActive ? 'inherit' : 'none' }}>
       {/* For smaller screens, the image will take up 12 columns (full width).
            For medium and larger screens, it will take up 4 columns as in your original design. */}
       <Grid item xs={12} md={6} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
