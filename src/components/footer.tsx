@@ -43,19 +43,19 @@ const Footer: FC = () => {
             <Grid item xs={12} md={2}>
               <Typography variant="h6">Legal</Typography>
               <Stack spacing={2} sx={{ mt: 2 }}>
-                <Link to={Paths.PRIVACY_POLICY} style={{ textDecoration: 'none' }} target="_blank">
+                <Link to={Paths.PRIVACY_POLICY} style={{ textDecoration: 'none' }}>
                   <Typography color="white">Privacy Policy</Typography>
                 </Link>
-                <Link to={Paths.TERMS} style={{ textDecoration: 'none' }} target="_blank">
+                <Link to={Paths.TERMS} style={{ textDecoration: 'none' }}>
                   <Typography color="white">Terms of Use</Typography>
                 </Link>
-                <Link to={Paths.COOKIE_POLICY} style={{ textDecoration: 'none' }} target="_blank">
+                <Link to={Paths.COOKIE_POLICY} style={{ textDecoration: 'none' }}>
                   <Typography color="white">Cookie Policy</Typography>
                 </Link>
-                <Link to={Paths.DISCLAIMER} style={{ textDecoration: 'none' }} target="_blank">
+                <Link to={Paths.DISCLAIMER} style={{ textDecoration: 'none' }}>
                   <Typography color="white">Disclaimer</Typography>
                 </Link>
-                <Link to={Paths.ACCEPTABLE_USE_POLICY} style={{ textDecoration: 'none' }} target="_blank">
+                <Link to={Paths.ACCEPTABLE_USE_POLICY} style={{ textDecoration: 'none' }}>
                   <Typography color="white">Acceptable Use</Typography>
                 </Link>
               </Stack>

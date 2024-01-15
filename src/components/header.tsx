@@ -1,12 +1,13 @@
 import { FC, useState } from 'react';
 import { AppBar, Box, Button, IconButton, Menu, MenuItem, Stack, Toolbar, Typography, useTheme } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { Paths } from '@constants/paths.ts';
 
 export const Header: FC = () => {
   const theme = useTheme();
+  const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = (event: any) => {
@@ -20,19 +21,21 @@ export const Header: FC = () => {
   return (
     <AppBar position="static" sx={{ backgroundColor: theme.palette.background.paper, color: 'black', boxShadow: 'none' }}>
       <Toolbar>
-        <Box component="img" src="/logo.png" sx={{ height: { xs: '30px', md: '40px' }, mr: 2 }} />
-        <Typography variant="h6" component="span" sx={{ fontSize: { xs: '1rem', md: '1.25rem' }, mr: 2 }}>
-          PeopleKit
-          <Typography
-            component="span"
-            sx={{
-              verticalAlign: 'super',
-              fontSize: '0.5rem'
-            }}
-          >
-            ®
+        <Box onClick={() => navigate(Paths.HOME)} sx={{ cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <Box component="img" src="/logo.png" sx={{ height: { xs: '30px', md: '40px' }, mr: 2 }} />
+          <Typography variant="h6" component="span" sx={{ fontSize: { xs: '1rem', md: '1.25rem' }, mr: 2 }}>
+            PeopleKit
+            <Typography
+              component="span"
+              sx={{
+                verticalAlign: 'super',
+                fontSize: '0.5rem'
+              }}
+            >
+              ®
+            </Typography>
           </Typography>
-        </Typography>
+        </Box>
         <Box sx={{ flexGrow: 1 }} />
         {/* Mobile navigation */}
         <Box sx={{ display: { xs: 'block', md: 'none' } }}>
