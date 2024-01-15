@@ -9,7 +9,7 @@ const rolesData = [
     label: 'Executives',
     image: '/roles/Executive.png',
     title: 'Get real-time analytics, real-fast',
-    description: `Using PeopleKit™'s powerful data & analytics platform and state-of-the-art machine-learning models & AI chatbot your time to insights will be quicker than ever before. Lead your organization like never before through unprecedented insights at your fingertips.`
+    description: `Using PeopleKit's powerful data & analytics platform and state-of-the-art machine-learning models & AI chatbot your time to insights will be quicker than ever before. Lead your organization like never before through unprecedented insights at your fingertips.`
   },
   {
     label: 'HRBPs',

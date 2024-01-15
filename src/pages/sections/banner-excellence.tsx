@@ -8,7 +8,7 @@ export const BannerExcellence: FC = () => {
     <SectionContent maxWidth="lg">
       <Stack textAlign="center" sx={{ py: 6 }} gap={4}>
         <Typography variant="h2" fontWeight="bold" color="white">
-          PeopleKit™ People Analytics Center of Excellence
+          PeopleKit People Analytics Center of Excellence
         </Typography>
         <Typography variant="h4" fontWeight="medium" color="white" sx={{ mb: 3 }}>
           More than consultants - Partners

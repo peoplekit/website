@@ -22,7 +22,16 @@ export const Header: FC = () => {
       <Toolbar>
         <Box component="img" src="/logo.png" sx={{ height: { xs: '30px', md: '40px' }, mr: 2 }} />
         <Typography variant="h6" component="span" sx={{ fontSize: { xs: '1rem', md: '1.25rem' }, mr: 2 }}>
-          PeopleKit™
+          PeopleKit
+          <Typography
+            component="span"
+            sx={{
+              verticalAlign: 'super',
+              fontSize: '0.5rem'
+            }}
+          >
+            ®
+          </Typography>
         </Typography>
         <Box sx={{ flexGrow: 1 }} />
         {/* Mobile navigation */}

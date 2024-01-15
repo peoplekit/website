@@ -64,7 +64,7 @@ const sections: InfoSectionProps[][] = [
     {
       icon: faGears,
       title: 'Bring diversity, equity, and inclusion into your flow of work',
-      items: ['Demographic filters can be applied across the PeopleKit™ platform']
+      items: ['Demographic filters can be applied across the PeopleKit platform']
     },
     {
       icon: faScaleUnbalanced,
