@@ -15,7 +15,7 @@ export const BannerExcellence: FC = () => {
         </Typography>
         <Stack direction={{ sm: 'column', md: 'row' }} justifyContent="center" gap={2}>
           {[
-            { number: '20', subtitle: 'Years of combined Experience' },
+            { number: '30+', subtitle: 'Years of combined Experience' },
             { number: '2', subtitle: 'Qualified People Analytics & Technology Experts' },
             { number: '1', subtitle: 'Industry-Leading People Analytics Platform' }
           ].map((item, idx) => (

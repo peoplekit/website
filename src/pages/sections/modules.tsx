@@ -58,19 +58,30 @@ const sections: InfoSectionProps[][] = [
   [
     {
       icon: faPeopleRoof,
-      title: 'Build trust with underrepresented populations',
-      items: ['Robust security keeps demographics confidential', 'Describe journeys for groups of interest from hire to retire', 'Take action on the insights from key groups']
+      title: 'Strategic Partners',
+      items: [
+        'Align HR, Finance, and Operations to one version of the truth',
+        'Use integrated data to ensure workforce plans support growth and cost goals',
+        'Model scenarios across departments to see the impact of every decision'
+      ]
     },
     {
       icon: faGears,
-      title: 'Bring diversity, equity, and inclusion into your flow of work',
-      items: ['Demographic filters can be applied across the PeopleKit platform']
+      title: 'Collaborative Planning',
+      items: [
+        'Co‑design workforce plans across teams with shared budgets and timelines',
+        'Balance supply and demand for skills and capacity in real time',
+        'Iterate on headcount forecasts together, adjusting to emerging needs'
+      ]
     },
     {
-      icon: faScaleUnbalanced,
-      title: 'Benchmark yourself against your peers and industry',
-      items: ["PeopleKit's robust datasets include benchmarks from:"],
-      subItems: ['Macroeconomic sources', 'Private 3rd party benchmarks', 'Securely shared customer organization data']
+      icon: faMagnifyingGlassChart,
+      title: 'Performance & Insights',
+      items: [
+        'Monitor the outcomes of workforce initiatives through live dashboards and narratives',
+        'Identify bottlenecks and friction across teams and processes',
+        'Spot emerging risks and opportunities with predictive analytics'
+      ]
     }
   ],
   [
@@ -216,7 +227,7 @@ export const Modules: FC = () => {
         }}
       >
         <Tab icon={<FontAwesomeIcon icon={faUserPlus} size="2x" />} label="Talent Acquisition" />
-        <Tab icon={<FontAwesomeIcon icon={faPeopleRoof} size="2x" />} label="DE&I" />
+        <Tab icon={<FontAwesomeIcon icon={faPeopleRoof} size="2x" />} label="Partnering" />
         <Tab icon={<FontAwesomeIcon icon={faUserGraduate} size="2x" />} label="Development" />
         <Tab icon={<FontAwesomeIcon icon={faPersonWalkingArrowLoopLeft} size="2x" />} label="Retention" />
         <Tab icon={<FontAwesomeIcon icon={faMicrophoneLines} size="2x" />} label="Listing" />

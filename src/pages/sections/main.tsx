@@ -13,14 +13,16 @@ export const Main: FC = () => {
       </ParallaxBanner>
       <SectionContent>
         <Grid container spacing={3}>
-          <Grid item xs={12} md={6} sx={{ display: 'flex', alignItems: 'center' }}>
+          <Grid item xs={12} md={8} sx={{ display: 'flex', alignItems: 'center' }}>
             <Stack spacing={2} sx={{ textAlign: 'center', alignItems: 'center' }}>
               <Typography variant="h1" component="h1" sx={{ fontSize: { xs: '4rem' } }}>
-                Know your Workforce
-                <Box sx={(theme) => ({ color: theme.palette.secondary.main, fontSize: { xs: '4rem' } })}>in No Time</Box>
+                Optimizing&nbsp;People&nbsp;&amp;&nbsp;Agents for
+                <Box sx={(theme) => ({ color: theme.palette.secondary.main, fontSize: { xs: '4rem' } })}>
+                  the Future&nbsp;of&nbsp;Work
+                </Box>
               </Typography>
               <Typography variant="subtitle1" sx={{ fontSize: { xs: '0.9rem', md: '1.1rem' } }}>
-                PeopleKit is your people analytics platform and consultancy, enabling teams and organizations to achieve the business outcomes you need to thrive
+                PeopleKit is your AI‑native resource intelligence platform, transforming workforce data into clarity, insight, and action.
               </Typography>
               <Stack spacing={2} direction="row">
                 <Button size="large" component="a" color="secondary" variant="contained" href="https://demo.peoplekit.com" target="_blank">
@@ -34,7 +36,7 @@ export const Main: FC = () => {
               </Stack>
             </Stack>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={4}>
             <Card sx={{ width: '100%' }}>
               <Video videoId="o6az9F1E8RI" />
             </Card>
