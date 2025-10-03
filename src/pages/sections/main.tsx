@@ -1,6 +1,5 @@
 import { FC } from 'react';
-import { Box, Button, Card, Grid, Stack, Typography } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Box, Button, Card, Stack, Typography } from '@mui/material';
 import { ParallaxBanner, ParallaxBannerLayer } from 'react-scroll-parallax';
 import { SectionContent } from '@components/section.content.tsx';
 import { Video } from '@components/video.tsx';
@@ -12,36 +11,50 @@ export const Main: FC = () => {
         <ParallaxBannerLayer image="/background.webp" speed={-50} />
       </ParallaxBanner>
       <SectionContent>
-        <Grid container spacing={3}>
-          <Grid item xs={12} md={8} sx={{ display: 'flex', alignItems: 'center' }}>
+        <Stack direction={{ xs: 'column', md: 'row' }} spacing={3} alignItems="center">
+          <Box sx={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <Stack spacing={2} sx={{ textAlign: 'center', alignItems: 'center' }}>
-              <Typography variant="h1" component="h1" sx={{ fontSize: { xs: '4rem' } }}>
-                Optimizing&nbsp;People&nbsp;&amp;&nbsp;Agents for
-                <Box sx={(theme) => ({ color: theme.palette.secondary.main, fontSize: { xs: '4rem' } })}>
-                  the Future&nbsp;of&nbsp;Work
+              <Typography
+                variant="h1"
+                component="h1"
+                sx={{
+                  fontSize: { xs: '2.3rem', sm: '3rem', md: '4rem' },
+                  lineHeight: { xs: 1.15, sm: 1.2, md: 1.2 },
+                  wordBreak: 'break-word'
+                }}
+              >
+                Optimizing People &amp; Agents
+                <br />
+                <Box
+                  sx={(theme) => ({
+                    color: theme.palette.secondary.main,
+                    fontSize: { xs: '2.3rem', sm: '3rem', md: '4rem' },
+                    lineHeight: { xs: 1.15, sm: 1.2, md: 1.2 },
+                    display: 'inline'
+                  })}
+                >
+                  for the Future of Work
                 </Box>
               </Typography>
-              <Typography variant="subtitle1" sx={{ fontSize: { xs: '0.9rem', md: '1.1rem' } }}>
+              <Typography variant="subtitle1" sx={{ fontSize: { xs: '0.9rem', sm: '1rem', md: '1.15rem' } }}>
                 PeopleKit is your AI‑native resource intelligence platform, transforming workforce data into clarity, insight, and action.
               </Typography>
-              <Stack spacing={2} direction="row">
+              <Stack spacing={2} direction={{ xs: 'column', sm: 'row' }} sx={{ width: '100%', justifyContent: 'center' }}>
                 <Button size="large" component="a" color="secondary" variant="contained" href="https://demo.peoplekit.com" target="_blank">
                   View Demo
                 </Button>
-                <Link to="#contact-us" style={{ textDecoration: 'none' }}>
-                  <Button variant="contained" size="large">
-                    Contact Us
-                  </Button>
-                </Link>
+                <Button size="large" component="a" color="primary" variant="contained" href="#contact-us">
+                  Contact Us
+                </Button>
               </Stack>
             </Stack>
-          </Grid>
-          <Grid item xs={12} md={4}>
+          </Box>
+          <Box sx={{ flex: 1, width: '100%', maxWidth: 600, mx: 'auto' }}>
             <Card sx={{ width: '100%' }}>
               <Video videoId="o6az9F1E8RI" />
             </Card>
-          </Grid>
-        </Grid>
+          </Box>
+        </Stack>
       </SectionContent>
     </>
   );
