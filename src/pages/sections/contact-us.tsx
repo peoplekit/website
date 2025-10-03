@@ -32,7 +32,7 @@ export const ContactUs: FC = () => {
                   <FontAwesomeIcon icon={faLinkedinIn as IconProp} />
                 </IconButton>
               </Link>
-              <Link to="https://twitter.com/peoplekitai" target="_blank" style={{ textDecoration: 'none' }}>
+              <Link to="https://x.com/peoplekitai" target="_blank" style={{ textDecoration: 'none' }}>
                 <IconButton>
                   <FontAwesomeIcon icon={faXTwitter as IconProp} />
                 </IconButton>

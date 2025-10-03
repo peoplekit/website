@@ -8,7 +8,7 @@ on:
 jobs:
   deploy:
     env:
-      VITE_API_HOST: https://development-api.peoplekit.com/graphql
+      VITE_API_HOST: https://api.peoplekit.com/graphql
       VITE_PUBLIC_POSTHOG_HOST: https://us.i.posthog.com
       VITE_PUBLIC_POSTHOG_KEY: ${{ secrets.POSTHOG_KEY }}
     permissions:
